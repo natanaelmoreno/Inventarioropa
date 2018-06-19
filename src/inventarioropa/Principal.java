@@ -129,12 +129,12 @@ public class Principal extends javax.swing.JFrame {
         cmbmaterial = new javax.swing.JComboBox<>();
         cmbpais = new javax.swing.JComboBox<>();
         btnNuevo = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnGModificar = new javax.swing.JButton();
+        btnMostrar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -183,43 +183,53 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 95, -1, -1));
 
-        jButton2.setText("Guardar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 151, -1, -1));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 151, -1, -1));
 
-        jButton3.setText("Buscar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 206, -1, -1));
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 206, -1, -1));
 
-        jButton4.setText("modificar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnModificarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 259, -1, -1));
+        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 259, -1, -1));
 
-        jButton5.setText("guardar modificacion");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnGModificar.setText("Guardar Modificacion");
+        btnGModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnGModificarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
+        jPanel1.add(btnGModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
 
-        jButton6.setText("mostrar");
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 367, -1, -1));
+        btnMostrar.setText("Mostrar");
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 367, -1, -1));
 
-        jButton7.setText("salir");
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 418, -1, -1));
+        btnSalir.setText("salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 418, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -250,7 +260,7 @@ public class Principal extends javax.swing.JFrame {
         limpiar();
     }//GEN-LAST:event_btnNuevoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
           if (this.txtarticulo.getText() == null) {
             JOptionPane.showMessageDialog(rootPane, "Debe seleccionar un articulo", "AVISO DEL SISTEMA", 2);
 
@@ -270,9 +280,9 @@ public class Principal extends javax.swing.JFrame {
             llamar.insertar7(this.txtcodigo.getText(),this.txtarticulo.getText(), this.cmbmaterial.getSelectedIndex(), this.cmbmarca.getSelectedIndex(), this.cmbtalla.getSelectedIndex(), this.cmbpais.getSelectedIndex(), Integer.parseInt(this.txtexistencia.getText()));
             System.out.println("ingreso exitoso");
     }        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
          String codigo = JOptionPane.showInputDialog("Ingrese el código del articulo a búscar:");
         if (codigo != null) {
             rs = llamar.buscar7(codigo);
@@ -313,19 +323,29 @@ public class Principal extends javax.swing.JFrame {
             System.out.println(ex.getMessage());
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "AVISO DEL SISTEMA", 0);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         if (encontrado == true) {
             desbloquear();
 
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnModificarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnGModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGModificarActionPerformed
           llamar.modificar7(this.txtcodigo.getText(), this.txtarticulo.getText(),this.cmbmarca.getSelectedIndex(), this.cmbtalla.getSelectedIndex() , this.cmbpais.getSelectedIndex(),this.cmbmaterial.getSelectedIndex(),  Integer.parseInt(this.txtexistencia.getText()));
         JOptionPane.showMessageDialog(rootPane, "Registro modificado con éxito.", "AVISO DEL SISTEMA", 1);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnGModificarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+       //  frmtabla ropa=new frmtabla();
+    //ropa.setVisible(true);
+    dispose();
+    }//GEN-LAST:event_btnMostrarActionPerformed
  public void limpiar() {
         txtcodigo.setText("");
         txtexistencia.setText("");
@@ -385,17 +405,17 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnGModificar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnMostrar;
     private javax.swing.JButton btnNuevo;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cmbmarca;
     private javax.swing.JComboBox<String> cmbmaterial;
     private javax.swing.JComboBox<String> cmbpais;
     private javax.swing.JComboBox<String> cmbtalla;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
