@@ -192,12 +192,27 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 151, -1, -1));
 
         jButton3.setText("Buscar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 206, -1, -1));
 
         jButton4.setText("modificar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 259, -1, -1));
 
         jButton5.setText("guardar modificacion");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
 
         jButton6.setText("mostrar");
@@ -256,6 +271,61 @@ public class Principal extends javax.swing.JFrame {
             System.out.println("ingreso exitoso");
     }        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+         String codigo = JOptionPane.showInputDialog("Ingrese el código del articulo a búscar:");
+        if (codigo != null) {
+            rs = llamar.buscar7(codigo);
+        } else {
+
+            JOptionPane.showMessageDialog(null, "nell perro no puede");
+        }
+
+        encontrado = false;
+
+        try {
+            
+            while (rs.next()) {
+                this.txtcodigo.setText(rs.getString(1));
+                
+                this.txtarticulo.setText(rs.getString(2));
+                this.cmbmarca.setSelectedIndex(rs.getInt(3));
+                this.cmbtalla.setSelectedIndex(rs.getInt(4));
+                this.cmbpais.setSelectedIndex(rs.getInt(5));
+                 this.cmbmaterial.setSelectedIndex(rs.getInt(6));
+                this.txtexistencia.setText(rs.getString(7));
+                
+                encontrado = true;
+                JOptionPane.showMessageDialog(null, "encontrado");
+
+                txtarticulo.setEnabled(false);
+                cmbmaterial.setEnabled(false);
+                cmbmarca.setEnabled(false);
+                cmbtalla.setEnabled(false);
+                cmbpais.setEnabled(false);
+                  txtexistencia.setEnabled(false);
+            }
+            if (encontrado == false) {
+                JOptionPane.showMessageDialog(rootPane, "Registro no encontrado!!!", "AVISO DEL SISTEMA", 0);
+               
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "AVISO DEL SISTEMA", 0);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        if (encontrado == true) {
+            desbloquear();
+
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+          llamar.modificar7(this.txtcodigo.getText(), this.txtarticulo.getText(),this.cmbmarca.getSelectedIndex(), this.cmbtalla.getSelectedIndex() , this.cmbpais.getSelectedIndex(),this.cmbmaterial.getSelectedIndex(),  Integer.parseInt(this.txtexistencia.getText()));
+        JOptionPane.showMessageDialog(rootPane, "Registro modificado con éxito.", "AVISO DEL SISTEMA", 1);
+    }//GEN-LAST:event_jButton5ActionPerformed
  public void limpiar() {
         txtcodigo.setText("");
         txtexistencia.setText("");
