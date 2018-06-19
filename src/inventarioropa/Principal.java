@@ -5,26 +5,102 @@
  */
 package inventarioropa;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author NATANAEL MORENO
  */
 public class Principal extends javax.swing.JFrame {
-   DefaultComboBoxModel modeloarticulo = new DefaultComboBoxModel();
+
+    ResultSet rs = null;
+
+    DefaultComboBoxModel modeloarticulo = new DefaultComboBoxModel();
     DefaultComboBoxModel modelomaterial = new DefaultComboBoxModel();
     DefaultComboBoxModel modelomarca = new DefaultComboBoxModel();
     DefaultComboBoxModel modelotalla = new DefaultComboBoxModel();
     DefaultComboBoxModel modelopais = new DefaultComboBoxModel();
 
-
+    metodosdos articulo = new metodosdos();
+    metodosdos material = new metodosdos();
+    metodosdos marca = new metodosdos();
+    metodosdos talla = new metodosdos();
+   metodosdos pais = new metodosdos();
 
     /**
      * Creates new form Principal
      */
+    metodos llamar = new metodos();
+    boolean encontrado = false;
+    
     public Principal() {
         initComponents();
+         this.setLocationRelativeTo(rootPane);
+
+        setTitle(" YAEL");
+
+        // llenado de combobox articulos
+        rs = articulo.llenarArticulos();
+        modeloarticulo.addElement("seleccione");
+        try {
+            while (rs.next()) {
+                modeloarticulo.addElement(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", 0);
+        }
+        //cmbarticulo.setModel(modeloarticulo);
+
+        // llenado de combobox materiales
+        rs = material.llenarMateriales();
+        modelomaterial.addElement("seleccione");
+        try {
+            while (rs.next()) {
+                modelomaterial.addElement(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", 0);
+        }
+        cmbmaterial.setModel(modelomaterial);
+
+        // llenado de combobox marcas
+        rs = marca.llenarMarcas();
+        modelomarca.addElement("seleccione");
+        try {
+            while (rs.next()) {
+                modelomarca.addElement(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", 0);
+        }
+        cmbmarca.setModel(modelomarca);
+
+        // llenado de combobox tallas
+        rs = talla.llenarTallas();
+        modelotalla.addElement("seleccione");
+        try {
+            while (rs.next()) {
+                modelotalla.addElement(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", 0);
+        }
+        cmbtalla.setModel(modelotalla);
+
+        // llenado de combobox pais 
+        rs = pais.llenarPaises();
+        modelopais.addElement("seleccione");
+        try {
+            while (rs.next()) {
+                modelopais.addElement(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", 0);
+        }
+        cmbpais.setModel(modelopais);
     }
 
     /**
@@ -45,14 +121,14 @@ public class Principal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        txtcodigo = new javax.swing.JTextField();
+        txtexistencia = new javax.swing.JTextField();
+        txtarticulo = new javax.swing.JTextField();
+        cmbtalla = new javax.swing.JComboBox<>();
+        cmbmarca = new javax.swing.JComboBox<>();
+        cmbmaterial = new javax.swing.JComboBox<>();
+        cmbpais = new javax.swing.JComboBox<>();
+        btnNuevo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -87,37 +163,42 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel8.setText("Pais");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 422, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 96, 166, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 152, 166, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 207, 166, -1));
+        jPanel1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 96, 166, -1));
+        jPanel1.add(txtexistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 152, 166, -1));
+        jPanel1.add(txtarticulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 207, 166, -1));
 
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 260, 166, -1));
+        jPanel1.add(cmbtalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 260, 166, -1));
 
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 312, 166, -1));
+        jPanel1.add(cmbmarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 312, 166, -1));
 
-        jPanel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 368, 166, -1));
+        jPanel1.add(cmbmaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 368, 166, -1));
 
-        jPanel1.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 419, 166, -1));
+        jPanel1.add(cmbpais, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 419, 166, -1));
 
-        jButton1.setText("nuevo");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 95, -1, -1));
+        btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 95, -1, -1));
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Guardar");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 151, -1, -1));
 
-        jButton3.setText("jButton3");
+        jButton3.setText("Buscar");
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 206, -1, -1));
 
-        jButton4.setText("jButton4");
+        jButton4.setText("modificar");
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 259, -1, -1));
 
-        jButton5.setText("jButton5");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 311, -1, -1));
+        jButton5.setText("guardar modificacion");
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
 
-        jButton6.setText("jButton6");
+        jButton6.setText("mostrar");
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 367, -1, -1));
 
-        jButton7.setText("jButton7");
+        jButton7.setText("salir");
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 418, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,19 +206,52 @@ public class Principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+          txtarticulo.setText("");
+        cmbmaterial.setSelectedIndex(0);
+        cmbmarca.setSelectedIndex(0);
+        cmbtalla.setSelectedIndex(0);
+        cmbpais.setSelectedIndex(0); 
+
+        desbloquear();
+        limpiar();
+    }//GEN-LAST:event_btnNuevoActionPerformed
+ public void limpiar() {
+        txtcodigo.setText("");
+        txtexistencia.setText("");
+    }
+
+    public void desbloquear() {
+        txtcodigo.setEnabled(true);
+        txtarticulo.setEnabled(true);
+        cmbmaterial.setEnabled(true);
+        cmbmarca.setEnabled(true);
+        cmbtalla.setEnabled(true);
+        cmbpais.setEnabled(true);
+
+    }
+
+    public void bloquear() {
+        txtcodigo.setEnabled(false);
+        txtarticulo.setEnabled(false);
+        cmbmaterial.setEnabled(false);
+        cmbmarca.setEnabled(false);
+        cmbtalla.setEnabled(false);
+        cmbpais.setEnabled(false);
+    }
     /**
      * @param args the command line arguments
      */
@@ -174,17 +288,17 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnNuevo;
+    private javax.swing.JComboBox<String> cmbmarca;
+    private javax.swing.JComboBox<String> cmbmaterial;
+    private javax.swing.JComboBox<String> cmbpais;
+    private javax.swing.JComboBox<String> cmbtalla;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -194,8 +308,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField txtarticulo;
+    private javax.swing.JTextField txtcodigo;
+    private javax.swing.JTextField txtexistencia;
     // End of variables declaration//GEN-END:variables
 }
