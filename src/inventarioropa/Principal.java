@@ -90,7 +90,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 419, 166, -1));
 
-        jButton1.setText("jButton1");
+        jButton1.setText("nuevo");
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 95, -1, -1));
 
         jButton2.setText("jButton2");
