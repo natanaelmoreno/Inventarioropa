@@ -342,8 +342,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
-       //  frmtabla ropa=new frmtabla();
-    //ropa.setVisible(true);
+       frmtabla ropa=new frmtabla();
+    ropa.setVisible(true);
     dispose();
     }//GEN-LAST:event_btnMostrarActionPerformed
  public void limpiar() {

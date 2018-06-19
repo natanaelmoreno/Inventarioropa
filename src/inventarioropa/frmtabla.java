@@ -1,23 +1,66 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package inventarioropa;
 
-/**
- *
- * @author NATANAEL MORENO
- */
-public class frmtabla extends javax.swing.JFrame {
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
 
+public class frmtabla extends javax.swing.JFrame {
+    metodos mos=new metodos();
+    ResultSet rs=null;
     /**
      * Creates new form frmtabla
      */
+    DefaultTableModel modelotabla=new DefaultTableModel(); 
     public frmtabla() {
         initComponents();
+        setSize(800,415);
+       
+       this.setLocationRelativeTo(rootPane);
+      
+        setTitle(" bodega yael");
+        
+        
+        modelotabla.addColumn("Codigo");
+        modelotabla.addColumn("Articulo");
+        modelotabla.addColumn("Material");
+        modelotabla.addColumn("Marca");
+        modelotabla.addColumn("Talla");
+        modelotabla.addColumn("Pais");
+        modelotabla.addColumn("Existencias");
+        tblmostrar.setModel(modelotabla);
+      mostrar();
     }
-
+    
+     public void mostrar(){
+         rs=null;
+        rs=mos.llenarTabla1();
+        modelotabla.setRowCount(0);
+        try {
+            while (rs.next()) {                
+              String codigo = rs.getString(1);
+                String articulo = rs.getString(2);
+                String material = String.valueOf(rs.getInt(3));
+                String marca = String.valueOf(rs.getInt(4));
+                  String talla =String.valueOf(rs.getInt(5));
+                   String pais = String.valueOf(rs.getInt(6));
+                   String existencias = rs.getString(7);
+                Object datos[]=new Object[7];
+            datos[0]=codigo;
+            datos[1]=articulo;
+            datos[2]=material;
+            datos[3]=marca;
+            datos[4]=talla;
+            datos[5]=pais;
+            datos[6]=existencias;
+            modelotabla.addRow(datos);
+            tblmostrar.setModel(modelotabla);
+            }
+            
+        } catch (Exception e) {
+        }
+        
+        
+     }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,11 +72,11 @@ public class frmtabla extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblmostrar = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblmostrar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -44,7 +87,7 @@ public class frmtabla extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblmostrar);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -114,6 +157,6 @@ public class frmtabla extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblmostrar;
     // End of variables declaration//GEN-END:variables
 }
