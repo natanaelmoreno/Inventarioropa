@@ -5,11 +5,20 @@
  */
 package inventarioropa;
 
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author NATANAEL MORENO
  */
 public class Principal extends javax.swing.JFrame {
+   DefaultComboBoxModel modeloarticulo = new DefaultComboBoxModel();
+    DefaultComboBoxModel modelomaterial = new DefaultComboBoxModel();
+    DefaultComboBoxModel modelomarca = new DefaultComboBoxModel();
+    DefaultComboBoxModel modelotalla = new DefaultComboBoxModel();
+    DefaultComboBoxModel modelopais = new DefaultComboBoxModel();
+
+
 
     /**
      * Creates new form Principal
