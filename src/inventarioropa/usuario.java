@@ -94,7 +94,7 @@ public class usuario extends javax.swing.JFrame {
             if(rs.next()){
             if(password.equals(rs.getString("password"))){
             
-               // new principal().setVisible(true);
+                new Principal().setVisible(true);
             }else 
                 JOptionPane.showMessageDialog(null, "pass invalido ! ! !", "Error",JOptionPane.ERROR_MESSAGE);
                    
