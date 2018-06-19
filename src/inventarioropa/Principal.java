@@ -184,6 +184,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 95, -1, -1));
 
         jButton2.setText("Guardar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 151, -1, -1));
 
         jButton3.setText("Buscar");
@@ -229,6 +234,28 @@ public class Principal extends javax.swing.JFrame {
         desbloquear();
         limpiar();
     }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+          if (this.txtarticulo.getText() == null) {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar un articulo", "AVISO DEL SISTEMA", 2);
+
+        } else if (this.cmbmaterial.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar un material", "AVISO DEL SISTEMA", 2);
+
+        } else if (this.cmbmarca.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar una marca", "AVISO DEL SISTEMA", 2);
+
+        } else if (this.cmbtalla.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar una talla", "AVISO DEL SISTEMA", 2);
+
+        } else if (this.cmbpais.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar un pais", "AVISO DEL SISTEMA", 2);
+
+        } else {
+            llamar.insertar7(this.txtcodigo.getText(),this.txtarticulo.getText(), this.cmbmaterial.getSelectedIndex(), this.cmbmarca.getSelectedIndex(), this.cmbtalla.getSelectedIndex(), this.cmbpais.getSelectedIndex(), Integer.parseInt(this.txtexistencia.getText()));
+            System.out.println("ingreso exitoso");
+    }        
+    }//GEN-LAST:event_jButton2ActionPerformed
  public void limpiar() {
         txtcodigo.setText("");
         txtexistencia.setText("");
