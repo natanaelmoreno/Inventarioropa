@@ -34,6 +34,7 @@ public class usuario extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         btnInicio = new javax.swing.JButton();
         jPasswordd = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,7 +51,7 @@ public class usuario extends javax.swing.JFrame {
                 txtUsuarioKeyPressed(evt);
             }
         });
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 165, 154, -1));
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 154, -1));
 
         btnInicio.setText("Iniciar Sesion");
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
@@ -58,7 +59,7 @@ public class usuario extends javax.swing.JFrame {
                 btnInicioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 277, -1, -1));
+        jPanel1.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, -1, -1));
 
         jPasswordd.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -66,6 +67,9 @@ public class usuario extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jPasswordd, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 211, 154, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ivr-inteligecia-artifical.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 290));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,7 +79,7 @@ public class usuario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, Short.MAX_VALUE)
         );
 
         pack();
@@ -158,6 +162,7 @@ public class usuario extends javax.swing.JFrame {
     private javax.swing.JButton btnInicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordd;
     private javax.swing.JTextField txtUsuario;
