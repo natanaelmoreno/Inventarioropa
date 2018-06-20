@@ -79,8 +79,8 @@ public class usuario extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel4.setText("LOGIN");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 120, -1));
+        jLabel4.setText("YAEL");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 120, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ivr-inteligecia-artifical.jpg"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 290));

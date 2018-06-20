@@ -101,6 +101,7 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", 0);
         }
         cmbpais.setModel(modelopais);
+        bloquear();
     }
 
     /**
@@ -135,7 +136,9 @@ public class Principal extends javax.swing.JFrame {
         btnGModificar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,7 +150,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setName(""); // NOI18N
         jLabel1.setPreferredSize(new java.awt.Dimension(108, 269));
         jLabel1.setRequestFocusEnabled(false);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-260, 0, 830, 100));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-260, 0, 900, 90));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel2.setText("Codigo");
@@ -251,9 +254,13 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 510, 130, 50));
 
+        btnEliminar.setText("Eliminar");
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 530, -1, -1));
+
         jLabel9.setBackground(new java.awt.Color(0, 153, 204));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bb60c392163c2bb12fd52bec3af0d5e6.jpg"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 640, 470));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 640, 490));
+        jPanel1.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 40, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -298,18 +305,17 @@ public class Principal extends javax.swing.JFrame {
 
         } else {
             llamar.insertar7(this.txtcodigo.getText(),this.txtarticulo.getText(), this.cmbmaterial.getSelectedIndex(), this.cmbmarca.getSelectedIndex(), this.cmbtalla.getSelectedIndex(), this.cmbpais.getSelectedIndex(), Integer.parseInt(this.txtexistencia.getText()));
-            System.out.println("ingreso exitoso");
+            JOptionPane.showMessageDialog(null,"ingreso exitoso");
+               limpiar();
     }        
+       
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
          String codigo = JOptionPane.showInputDialog("Ingrese el código del articulo a búscar:");
         if (codigo != null) {
             rs = llamar.buscar7(codigo);
-        } else {
-
-            JOptionPane.showMessageDialog(null, "nell perro no puede");
-        }
+        } 
 
         encontrado = false;
 
@@ -369,11 +375,17 @@ public class Principal extends javax.swing.JFrame {
  public void limpiar() {
         txtcodigo.setText("");
         txtexistencia.setText("");
+        txtarticulo.setText("");
+         cmbmaterial.setSelectedIndex(0);
+        cmbmarca.setSelectedIndex(0);
+        cmbtalla.setSelectedIndex(0);
+        cmbpais.setSelectedIndex(0); 
     }
 
     public void desbloquear() {
         txtcodigo.setEnabled(true);
         txtarticulo.setEnabled(true);
+        txtexistencia.setEnabled(true);
         cmbmaterial.setEnabled(true);
         cmbmarca.setEnabled(true);
         cmbtalla.setEnabled(true);
@@ -384,6 +396,7 @@ public class Principal extends javax.swing.JFrame {
     public void bloquear() {
         txtcodigo.setEnabled(false);
         txtarticulo.setEnabled(false);
+        txtexistencia.setEnabled(false);
         cmbmaterial.setEnabled(false);
         cmbmarca.setEnabled(false);
         cmbtalla.setEnabled(false);
@@ -426,6 +439,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGModificar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
@@ -436,6 +450,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbmaterial;
     private javax.swing.JComboBox<String> cmbpais;
     private javax.swing.JComboBox<String> cmbtalla;
+    private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

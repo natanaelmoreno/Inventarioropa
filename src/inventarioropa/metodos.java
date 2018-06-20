@@ -153,8 +153,6 @@ public class metodos {
         return (cn.getValores("SELECT codarticulo,desarticulo,codmaterial,codmarca,codtalla,codpais,existencias FROM inventario"));
     }
     
-    public ResultSet llenarTabla1() {
-        return (cn.getValores("SELECT codarticulo,desarticulo,desmaterial,descripcionmarca,descripciontalla,descripcionpais,existencias FROM inventario,inventario,material,marca,talla,pais,inventario"));
-    }
+  
    
 }
