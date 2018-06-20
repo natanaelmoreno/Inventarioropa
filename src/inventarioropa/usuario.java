@@ -58,7 +58,7 @@ public class usuario extends javax.swing.JFrame {
         });
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 140, -1));
 
-        btnInicio.setBackground(new java.awt.Color(0, 102, 255));
+        btnInicio.setBackground(new java.awt.Color(102, 153, 255));
         btnInicio.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnInicio.setText("Iniciar Sesion");
         btnInicio.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));

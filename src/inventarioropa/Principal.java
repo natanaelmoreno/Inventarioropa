@@ -135,115 +135,135 @@ public class Principal extends javax.swing.JFrame {
         btnGModificar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("bodega Yael");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 28, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PicsArt_06-20-11.03.25.jpg"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(0, 0));
+        jLabel1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jLabel1.setName(""); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(108, 269));
+        jLabel1.setRequestFocusEnabled(false);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-260, 0, 830, 100));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel2.setText("Codigo");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 99, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel3.setText("Existencia");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 155, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel4.setText("Articulo");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 210, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel5.setText("Talla");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 263, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel6.setText("Marca");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 315, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel7.setText("Material");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 371, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel8.setText("Pais");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 422, -1, -1));
-        jPanel1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 96, 166, -1));
-        jPanel1.add(txtexistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 152, 166, -1));
-        jPanel1.add(txtarticulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 207, 166, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, -1, -1));
+        jPanel1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 166, -1));
+        jPanel1.add(txtexistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 166, -1));
+        jPanel1.add(txtarticulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 166, -1));
 
-        jPanel1.add(cmbtalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 260, 166, -1));
+        jPanel1.add(cmbtalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 166, -1));
 
-        jPanel1.add(cmbmarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 312, 166, -1));
+        jPanel1.add(cmbmarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 166, -1));
 
-        jPanel1.add(cmbmaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 368, 166, -1));
+        jPanel1.add(cmbmaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 166, -1));
 
-        jPanel1.add(cmbpais, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 419, 166, -1));
+        jPanel1.add(cmbpais, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 166, -1));
 
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/new.png"))); // NOI18N
         btnNuevo.setText("Nuevo");
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 95, -1, -1));
+        jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 130, 50));
 
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/guardar.png"))); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 151, -1, -1));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 130, 50));
 
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/buscar.png"))); // NOI18N
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 206, -1, -1));
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 130, 50));
 
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/modificar.png"))); // NOI18N
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 259, -1, -1));
+        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 130, 50));
 
+        btnGModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/guardarCambios.png"))); // NOI18N
         btnGModificar.setText("Guardar Modificacion");
         btnGModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGModificarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
+        jPanel1.add(btnGModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
 
+        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/_disabled__document.png"))); // NOI18N
         btnMostrar.setText("Mostrar");
         btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMostrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 367, -1, -1));
+        jPanel1.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 440, 130, 50));
 
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/exit.png"))); // NOI18N
         btnSalir.setText("salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 418, -1, -1));
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 510, 130, 50));
+
+        jLabel9.setBackground(new java.awt.Color(0, 153, 204));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bb60c392163c2bb12fd52bec3af0d5e6.jpg"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 640, 470));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -424,6 +444,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtarticulo;
     private javax.swing.JTextField txtcodigo;
