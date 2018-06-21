@@ -29,6 +29,7 @@ public class Principal extends javax.swing.JFrame {
     metodosdos marca = new metodosdos();
     metodosdos talla = new metodosdos();
    metodosdos pais = new metodosdos();
+   metodos elim=new metodos();
 
     /**
      * Creates new form Principal
@@ -255,6 +256,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 510, 130, 50));
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 530, -1, -1));
 
         jLabel9.setBackground(new java.awt.Color(0, 153, 204));
@@ -372,6 +378,15 @@ public class Principal extends javax.swing.JFrame {
     ropa.setVisible(true);
     dispose();
     }//GEN-LAST:event_btnMostrarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+       String cod= txtcodigo.getText();
+       elim.eliminarbueno(cod);
+       JOptionPane.showMessageDialog(null, "Eliminado");
+       limpiar();
+       
+    }//GEN-LAST:event_btnEliminarActionPerformed
  public void limpiar() {
         txtcodigo.setText("");
         txtexistencia.setText("");

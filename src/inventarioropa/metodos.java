@@ -152,7 +152,9 @@ public class metodos {
     public ResultSet llenarTabla() {
         return (cn.getValores("SELECT codarticulo,desarticulo,codmaterial,codmarca,codtalla,codpais,existencias FROM inventario"));
     }
-    
+    public void eliminarbueno(String codigo) {
+        cn.UID("DELETE FROM inventario WHERE codarticulo='" + codigo + "'");
+    }
   
    
 }
