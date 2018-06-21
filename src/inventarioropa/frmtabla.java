@@ -13,7 +13,7 @@ public class frmtabla extends javax.swing.JFrame {
     DefaultTableModel modelotabla=new DefaultTableModel(); 
     public frmtabla() {
         initComponents();
-        setSize(850,500);
+        setSize(850,550);
        
        this.setLocationRelativeTo(rootPane);
       
@@ -74,6 +74,7 @@ public class frmtabla extends javax.swing.JFrame {
         tblmostrar = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         btnregresar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,6 +91,7 @@ public class frmtabla extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 775, 350));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 648, 77, 49));
 
+        btnregresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/_disabled__redo.png"))); // NOI18N
         btnregresar.setText("Regresar");
         btnregresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +99,11 @@ public class frmtabla extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnregresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel3.setText("YAEL");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dfgh.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 620));
@@ -151,6 +158,7 @@ public class frmtabla extends javax.swing.JFrame {
     private javax.swing.JButton btnregresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblmostrar;
     // End of variables declaration//GEN-END:variables

@@ -5,6 +5,7 @@
  */
 package inventarioropa;
 
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.DefaultComboBoxModel;
@@ -180,7 +181,19 @@ public class Principal extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel8.setText("Pais");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, -1, -1));
+
+        txtcodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtcodigoKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 166, -1));
+
+        txtexistencia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtexistenciaKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtexistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 166, -1));
         jPanel1.add(txtarticulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 166, -1));
 
@@ -226,7 +239,7 @@ public class Principal extends javax.swing.JFrame {
                 btnModificarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 130, 50));
+        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 130, 50));
 
         btnGModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/guardarCambios.png"))); // NOI18N
         btnGModificar.setText("Guardar Modificacion");
@@ -235,7 +248,7 @@ public class Principal extends javax.swing.JFrame {
                 btnGModificarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
+        jPanel1.add(btnGModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, -1, -1));
 
         btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/_disabled__document.png"))); // NOI18N
         btnMostrar.setText("Mostrar");
@@ -244,7 +257,7 @@ public class Principal extends javax.swing.JFrame {
                 btnMostrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 440, 130, 50));
+        jPanel1.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, 130, 50));
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/exit.png"))); // NOI18N
         btnSalir.setText("salir");
@@ -253,15 +266,16 @@ public class Principal extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 510, 130, 50));
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 520, 130, 40));
 
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/eliminar.png"))); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 530, -1, -1));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 290, 130, 50));
 
         jLabel9.setBackground(new java.awt.Color(0, 153, 204));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bb60c392163c2bb12fd52bec3af0d5e6.jpg"))); // NOI18N
@@ -355,6 +369,7 @@ public class Principal extends javax.swing.JFrame {
             System.out.println(ex.getMessage());
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "AVISO DEL SISTEMA", 0);
         }
+        bloquear();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
@@ -387,6 +402,18 @@ public class Principal extends javax.swing.JFrame {
        limpiar();
        
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void txtcodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcodigoKeyPressed
+       if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+            txtexistencia.requestFocus();
+            }
+    }//GEN-LAST:event_txtcodigoKeyPressed
+
+    private void txtexistenciaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtexistenciaKeyPressed
+         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+            txtarticulo.requestFocus();
+            }
+    }//GEN-LAST:event_txtexistenciaKeyPressed
  public void limpiar() {
         txtcodigo.setText("");
         txtexistencia.setText("");
