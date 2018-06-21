@@ -17,6 +17,9 @@ public class usuario extends javax.swing.JFrame {
    
     public usuario() {
         initComponents();
+         this.setLocationRelativeTo(rootPane);
+
+        setTitle(" YAEL");
     }
 
     /**
